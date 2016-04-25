@@ -4,7 +4,6 @@
     <list default="true" id="7f943e4b-a60c-4752-bb59-137ed6ffde73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/romanNumeralConverter.php" afterPath="$PROJECT_DIR$/romanNumeralConverter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/romanNumeralConverterTest.php" afterPath="$PROJECT_DIR$/romanNumeralConverterTest.php" />
     </list>
     <ignored path="RomanNumeralKataProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,14 +27,14 @@
     <favorites_list name="RomanNumeralKataProject" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4945055">
+    <splitter split-orientation="horizontal" split-proportion="0.57326007">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="romanNumeralConverter.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/romanNumeralConverter.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="487">
-                  <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+                <state relative-caret-position="562">
+                  <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -48,8 +47,8 @@
           <file leaf-file-name="romanNumeralConverterTest.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/romanNumeralConverterTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="622">
-                  <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+                <state relative-caret-position="592">
+                  <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -215,44 +214,44 @@
       <workItem from="1461604725234" duration="999000" />
       <workItem from="1461609763303" duration="343000" />
       <workItem from="1461610716105" duration="2972000" />
-      <workItem from="1461614614647" duration="2867000" />
+      <workItem from="1461614614647" duration="4670000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 44m 31s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 15m 39s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 46m 13s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 15m 43s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 49m 46s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 15m 51s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 51m 25s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 16m 19s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 52m 16s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 16m 40s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 55m 51s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 16m 58s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 56m 20s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 17m 12s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 56m 39s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 17m 18s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 57m 16s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 25m 29s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 16h 59m 30s.xml">
+    <history-entry file="romanNumeralConverterTest - 2016.04.25 at 17h 30m 08s.xml">
       <configuration name="romanNumeralConverterTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14509000" />
+    <option name="totallyTimeSpent" value="16312000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -272,7 +271,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.502442" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796317" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -367,16 +366,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/romanNumeralConverterTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state relative-caret-position="592">
+          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/romanNumeralConverter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="562">
+          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
           <folding />
         </state>
       </provider>

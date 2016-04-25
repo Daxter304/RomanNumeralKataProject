@@ -34,38 +34,46 @@ class romanNumeralConverter {
       }
 
       if (strlen($romanNumeralsString) >= 4) {
-        $lastFourNumerals = str_split(substr($romanNumeralsString, -4, 4));
+        $romanNumeralsString = $this->reverseRomanNumeral($romanNumeralsString);
+      }
+    }
 
-        $oneLess = true;
-        foreach ($lastFourNumerals as $value) {
-          if ($value !== $lastFourNumerals[0]) {
-            $oneLess = false;
-            break;
-          }
-        }
+    return $romanNumeralsString;
+  }
 
-        if ($oneLess === true) {
-          $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
-          $pos = array_search($firstNumeralInInstance, $this->romanPosition);
+  private function reverseRomanNumeral($romanNumeralsString) {
+    $lastFourNumerals = str_split(substr($romanNumeralsString, -4, 4));
 
-          if ($pos > 0) {
-            $numeralsToReplace = substr($romanNumeralsString, -5, 5);
-            $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
-            $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
-          } else {
-            $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
-            $pos = array_search($firstNumeralInInstance, $this->romanPosition);
-            if ($pos > 0) {
-              $numeralsToReplace = substr($romanNumeralsString, -4, 4);
-              $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
-              $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
-            }
-          }
+    $oneLess = true;
+    foreach ($lastFourNumerals as $value) {
+      if ($value !== $lastFourNumerals[0]) {
+        $oneLess = false;
+        break;
+      }
+    }
+
+    if ($oneLess === true) {
+      $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
+      $pos = array_search($firstNumeralInInstance, $this->romanPosition);
+
+      if ($pos > 0) {
+        $romanNumeralsString = $this->replaceString($romanNumeralsString, -5, 5, $lastFourNumerals, $pos);
+      } else {
+        $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
+        $pos = array_search($firstNumeralInInstance, $this->romanPosition);
+        if ($pos > 0) {
+          $romanNumeralsString = $this->replaceString($romanNumeralsString, -4, 4, $lastFourNumerals, $pos);
         }
       }
     }
 
     return $romanNumeralsString;
+  }
+
+  private function replaceString($romanNumeralsString, $beginningString, $stringLength, $lastFourNumerals, $pos) {
+    $numeralsToReplace = substr($romanNumeralsString, $beginningString, $stringLength);
+    $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
+    return str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
   }
 }
 ?>
