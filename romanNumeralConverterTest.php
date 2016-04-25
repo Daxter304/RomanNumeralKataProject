@@ -15,31 +15,31 @@ class romanNumeralConverterTest extends PHPUnit_Framework_TestCase {
   function testReturnsOne() {
     $actual = $this->romanNumeralConverter->convertToRoman(1);
 
-    $this->assertEquals($actual, 'I');
+    $this->assertEquals('I', $actual);
   }
 
   function testReturnsThree() {
     $actual = $this->romanNumeralConverter->convertToRoman(3);
 
-    $this->assertEquals($actual, 'III');
+    $this->assertEquals('III', $actual);
   }
 
   function testReturnsNine() {
     $actual = $this->romanNumeralConverter->convertToRoman(9);
 
-    $this->assertEquals($actual, 'IX');
+    $this->assertEquals('IX', $actual);
   }
 
   function testReturnsOneZeroSixSix() {
     $actual = $this->romanNumeralConverter->convertToRoman(1066);
 
-    $this->assertEquals($actual, 'MLXVI');
+    $this->assertEquals('MLXVI', $actual);
   }
 
   function testReturnsNineteenEightyNine() {
     $actual = $this->romanNumeralConverter->convertToRoman(1989);
 
-    $this->assertEquals($actual, 'MCMLXXXIX');
+    $this->assertEquals('MCMLXXXIX', $actual);
   }
 }
 ?>

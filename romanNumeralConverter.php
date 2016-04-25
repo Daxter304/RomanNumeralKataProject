@@ -27,8 +27,6 @@ class romanNumeralConverter {
           $arabicNumber = $arabicNumber - $key;
           $romanNumeral .= $value;
           break;
-        } else if ($arabicNumber <= 0) {
-          break;
         }
       }
     }
