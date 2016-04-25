@@ -48,10 +48,19 @@ class romanNumeralConverter {
           $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
           $pos = array_search($firstNumeralInInstance, $this->romanPosition);
 
-          $numeralsToReplace = substr($romanNumeralsString, -5, 5);
-          $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
-
-          $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
+          if ($pos > 0) {
+            $numeralsToReplace = substr($romanNumeralsString, -5, 5);
+            $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
+            $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
+          } else {
+            $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
+            $pos = array_search($firstNumeralInInstance, $this->romanPosition);
+            if ($pos > 0) {
+              $numeralsToReplace = substr($romanNumeralsString, -4, 4);
+              $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
+              $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
+            }
+          }
         }
       }
     }

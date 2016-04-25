@@ -12,34 +12,46 @@ class romanNumeralConverterTest extends PHPUnit_Framework_TestCase {
     $this->assertNotNull($this->romanNumeralConverter);
   }
 
-  function testReturnsOne() {
+  function testConvertsOne() {
     $actual = $this->romanNumeralConverter->convertToRoman(1);
 
     $this->assertEquals('I', $actual);
   }
 
-  function testReturnsThree() {
+  function testConvertsThree() {
     $actual = $this->romanNumeralConverter->convertToRoman(3);
 
     $this->assertEquals('III', $actual);
   }
 
-  function testReturnsNine() {
+  function testConvertsNine() {
     $actual = $this->romanNumeralConverter->convertToRoman(9);
 
     $this->assertEquals('IX', $actual);
   }
 
-  function testReturnsOneZeroSixSix() {
+  function testConvertsOneZeroSixSix() {
     $actual = $this->romanNumeralConverter->convertToRoman(1066);
 
     $this->assertEquals('MLXVI', $actual);
   }
 
-  function testReturnsNineteenEightyNine() {
+  function testConvertsNineteenEightyNine() {
     $actual = $this->romanNumeralConverter->convertToRoman(1989);
 
     $this->assertEquals('MCMLXXXIX', $actual);
+  }
+
+  function testConvertsThreeThousandFourtyNine() {
+    $actual = $this->romanNumeralConverter->convertToRoman(3049);
+
+    $this->assertEquals('MMMXLIX', $actual);
+  }
+
+  function testConvertsFourThousandNinetyNine() {
+    $actual = $this->romanNumeralConverter->convertToRoman(4999);
+
+    $this->assertEquals('MMMMCMXCIX', $actual);
   }
 }
 ?>
