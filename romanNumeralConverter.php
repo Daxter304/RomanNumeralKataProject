@@ -23,6 +23,9 @@ class romanNumeralConverter {
 
   public function convertToRoman($arabicNumber) {
     $romanNumeralsString = "";
+    if ($arabicNumber > 4999 || $arabicNumber < 1) {
+      throw new Exception("Numbers less than 1 and greater than 4999 aren't supported");
+    }
 
     while ($arabicNumber > 0) {
       foreach ($this->romanNumerals as $key => $value) {
@@ -54,15 +57,15 @@ class romanNumeralConverter {
 
     if ($oneLess === true) {
       $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
-      $pos = array_search($firstNumeralInInstance, $this->romanPosition);
+      $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
 
-      if ($pos > 0) {
-        $romanNumeralsString = $this->replaceString($romanNumeralsString, -5, 5, $lastFourNumerals, $pos);
+      if ($numeralPosition > 0) {
+        $romanNumeralsString = $this->replaceString($romanNumeralsString, -5, 5, $lastFourNumerals, $numeralPosition);
       } else {
         $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
-        $pos = array_search($firstNumeralInInstance, $this->romanPosition);
-        if ($pos > 0) {
-          $romanNumeralsString = $this->replaceString($romanNumeralsString, -4, 4, $lastFourNumerals, $pos);
+        $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
+        if ($numeralPosition > 0) {
+          $romanNumeralsString = $this->replaceString($romanNumeralsString, -4, 4, $lastFourNumerals, $numeralPosition);
         }
       }
     }
@@ -70,9 +73,9 @@ class romanNumeralConverter {
     return $romanNumeralsString;
   }
 
-  private function replaceString($romanNumeralsString, $beginningString, $stringLength, $lastFourNumerals, $pos) {
+  private function replaceString($romanNumeralsString, $beginningString, $stringLength, $lastFourNumerals, $numeralPosition) {
     $numeralsToReplace = substr($romanNumeralsString, $beginningString, $stringLength);
-    $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$pos-1];
+    $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$numeralPosition-1];
     return str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
   }
 }

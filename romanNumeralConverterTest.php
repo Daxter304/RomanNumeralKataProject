@@ -30,7 +30,19 @@ class romanNumeralConverterTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('IX', $actual);
   }
 
-  function testConvertsOneZeroSixSix() {
+  function testConvertsFourteen() {
+    $actual = $this->romanNumeralConverter->convertToRoman(14);
+
+    $this->assertEquals('XIV', $actual);
+  }
+
+  function testConvertsFourHundred() {
+    $actual = $this->romanNumeralConverter->convertToRoman(400);
+
+    $this->assertEquals('CD', $actual);
+  }
+
+  function testConvertsOneHundredSixtySix() {
     $actual = $this->romanNumeralConverter->convertToRoman(1066);
 
     $this->assertEquals('MLXVI', $actual);
@@ -52,6 +64,13 @@ class romanNumeralConverterTest extends PHPUnit_Framework_TestCase {
     $actual = $this->romanNumeralConverter->convertToRoman(4999);
 
     $this->assertEquals('MMMMCMXCIX', $actual);
+  }
+
+  /**
+   * @expectedException Exception
+   */
+  function testOutsideOfRange() {
+    $this->romanNumeralConverter->convertToRoman(5000);
   }
 }
 ?>
