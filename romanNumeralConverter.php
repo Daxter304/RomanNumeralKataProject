@@ -67,21 +67,26 @@ class romanNumeralConverter {
         if ($numeralsToReplace === "IIII") {
           $numeralsToAdd = 'IV';
         } else {
-          $numeralsToReplace = substr($romanNumeralsString, -5, 5);
-          $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
-          $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
-          if ($numeralPosition === 0) {
-            $numeralsToReplace = substr($romanNumeralsString, -4, 4);
-            $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
-            $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
+          $response = $this->searchRomanPositionArray($romanNumeralsString, 5);
+          if ($response->numeralPosition === 0) {
+            $response = $this->searchRomanPositionArray($romanNumeralsString, 4);
           }
-          $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$numeralPosition-1];
+          $numeralsToReplace = $response->numeralsToReplace;
+          $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$response->numeralPosition-1];
         }
       }
       $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
     }
 
     return $romanNumeralsString;
+  }
+
+  private function searchRomanPositionArray($romanNumeralsString, $num) {
+    $numeralsToReplace = substr($romanNumeralsString, -$num, $num);
+    $firstNumeralInInstance = substr($romanNumeralsString, -$num, 1);
+    $numeralPosition =  array_search($firstNumeralInInstance, $this->romanPosition);
+
+    return (object)['numeralsToReplace' => $numeralsToReplace, 'numeralPosition' => $numeralPosition];
   }
 }
 ?>
