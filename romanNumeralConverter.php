@@ -50,36 +50,38 @@ class romanNumeralConverter {
   private function reverseRomanNumeral($romanNumeralsString) {
     $lastFourNumerals = str_split(substr($romanNumeralsString, -4, 4));
 
-    $oneLess = true;
+    $sameNumerals = true;
     foreach ($lastFourNumerals as $value) {
-      if ($value !== $lastFourNumerals[0]) {
-        $oneLess = false;
+      if ($value !== $lastFourNumerals[0] || $value === 'M') {
+        $sameNumerals = false;
         break;
       }
     }
 
-    if ($oneLess === true) {
-      $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
-      $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
-
-      if ($numeralPosition > 0 && $this->lastDigit !== '4') {
-        $romanNumeralsString = $this->replaceString($romanNumeralsString, -5, 5, $lastFourNumerals, $numeralPosition);
+    if ($sameNumerals === true) {
+      $numeralsToReplace = substr($romanNumeralsString, -5, 5);
+      if ($numeralsToReplace === 'VIIII') {
+        $numeralsToAdd = 'IX';
       } else {
-        $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
-        $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
-        if ($numeralPosition > 0) {
-          $romanNumeralsString = $this->replaceString($romanNumeralsString, -4, 4, $lastFourNumerals, $numeralPosition);
+        $numeralsToReplace = substr($romanNumeralsString, -4, 4);
+        if ($numeralsToReplace === "IIII") {
+          $numeralsToAdd = 'IV';
+        } else {
+          $numeralsToReplace = substr($romanNumeralsString, -5, 5);
+          $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
+          $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
+          if ($numeralPosition === 0) {
+            $numeralsToReplace = substr($romanNumeralsString, -4, 4);
+            $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
+            $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
+          }
+          $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$numeralPosition-1];
         }
       }
+      $romanNumeralsString = str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
     }
 
     return $romanNumeralsString;
-  }
-
-  private function replaceString($romanNumeralsString, $beginningString, $stringLength, $lastFourNumerals, $numeralPosition) {
-    $numeralsToReplace = substr($romanNumeralsString, $beginningString, $stringLength);
-    $numeralsToAdd = $lastFourNumerals[0] . $this->romanPosition[$numeralPosition-1];
-    return str_replace($numeralsToReplace, $numeralsToAdd, $romanNumeralsString);
   }
 }
 ?>

@@ -8,10 +8,6 @@ class romanNumeralConverterTest extends PHPUnit_Framework_TestCase {
     $this->romanNumeralConverter = new romanNumeralConverter();
   }
 
-  function testClassExists() {
-    $this->assertNotNull($this->romanNumeralConverter);
-  }
-
   function testConvertsOne() {
     $actual = $this->romanNumeralConverter->convertToRoman(1);
 
@@ -34,6 +30,12 @@ class romanNumeralConverterTest extends PHPUnit_Framework_TestCase {
     $actual = $this->romanNumeralConverter->convertToRoman(14);
 
     $this->assertEquals('XIV', $actual);
+  }
+
+  function testConvertsNinetyFour() {
+    $actual = $this->romanNumeralConverter->convertToRoman(94);
+
+    $this->assertEquals('XCIV', $actual);
   }
 
   function testConvertsFourHundred() {
