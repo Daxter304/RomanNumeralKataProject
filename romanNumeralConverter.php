@@ -1,6 +1,7 @@
 <?php
 
 class romanNumeralConverter {
+  private $lastDigit = null;
   private $romanNumerals = [
     'M' => 1000,
     'D' => 500,
@@ -26,6 +27,8 @@ class romanNumeralConverter {
     if ($arabicNumber > 4999 || $arabicNumber < 1) {
       throw new Exception("Numbers less than 1 and greater than 4999 aren't supported");
     }
+    $arabicNumberArray = str_split($arabicNumber);
+    $this->lastDigit = $arabicNumberArray[strlen($arabicNumber)-1];
 
     while ($arabicNumber > 0) {
       foreach ($this->romanNumerals as $key => $value) {
@@ -59,7 +62,7 @@ class romanNumeralConverter {
       $firstNumeralInInstance = substr($romanNumeralsString, -5, 1);
       $numeralPosition = array_search($firstNumeralInInstance, $this->romanPosition);
 
-      if ($numeralPosition > 0) {
+      if ($numeralPosition > 0 && $this->lastDigit !== '4') {
         $romanNumeralsString = $this->replaceString($romanNumeralsString, -5, 5, $lastFourNumerals, $numeralPosition);
       } else {
         $firstNumeralInInstance = substr($romanNumeralsString, -4, 1);
